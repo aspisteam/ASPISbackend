@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- This is a very simple example of using Web WorldWind. -->
+<html style="height:100%">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ASPIS</title>
+    <!-- Include the Web WorldWind library. -->
+    <script src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/worldwind.min.js"
+            type="text/javascript">
+    </script>
+    <link rel="stylesheet" href="/index.css">
+    <script src="/index.js"></script>
+
+</head>
+<body style="height: 100%; margin: 0; padding: 0; text-align: center;">
+
+
+<div class="flexbox-parent">
+    <div class="flexbox-item header">
+        ASPIS fire firefighting overview
+    </div>
+
+    <div class="fill-area content flexbox-item-grow">
+        <div class="fill-area-content-small flexbox-item-grow">
+                <div style="background-color: #454545; padding:8px;">
+                    <img id="flame_img" src="/assets/dead_flame.png" width="30px" height="30px">
+                    <button onclick="toggleAdd()">Add</button>
+                    <button onclick="toggleRemove()">Delete</button>
+                </div>
+                <div style="align-items: flex-end">World</div>
+        </div>
+        <div class="fill-area-content-big flexbox-item-grow">
+            <canvas id="canvasOne" style="width: 100%; height: 100%; background-color: black;">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+        </div>
+    </div>
+
+    <div class="flexbox-item footer">
+        ASPIS team
+    </div>
+</div>
+</body>
+</html>

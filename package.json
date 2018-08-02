@@ -1,0 +1,15 @@
+{
+  "name": "ASPISbackend",
+  "version": "1.0.0",
+  "dependencies": {
+    "@nasaworldwind/worldwind": "^0.9.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "sync-request": "^6.0.0",
+    "then-request": "^6.0.0"
+  },
+  "scripts": {
+    "run": "node ./index.js",
+    "determineFireSpread": "node ./determineFireSpread.js"
+  }
+}
