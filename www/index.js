@@ -5,7 +5,7 @@ var placemark;
 
 var addingActive = false;
 var deletingActive = false;
-
+var id = 0;
 
 window.addEventListener("load", eventWindowLoaded, false);
 function eventWindowLoaded() {
@@ -52,9 +52,9 @@ function addNewImageOnMap(latitude,longitude){
     var extraFlameData={
         type: 'flame',
         createdAt: Date.now(),
-        ID: '0123456',
+        ID: id,
         active: true
-    }
+    };
 
     placemarkAttributes.imageScale = 1;
     placemarkAttributes.imageColor = WorldWind.Color.WHITE;
@@ -74,27 +74,52 @@ function addNewImageOnMap(latitude,longitude){
 
     // Add the placemark to the layer.
     placemarkLayer.addRenderable(placemark);
+    id = id+1;
+}
+
+function removeImageFromMap(id){
+    console.log('Renderables first',placemarkLayer.renderables);
+
+    for(var i=0; i<placemarkLayer.renderables.length; i++){
+        var extraAspisData = placemarkLayer.renderables[i].extraAspisData;
+        console.log(extraAspisData);
+        if(extraAspisData.ID === id){
+            console.log('found delete');
+            placemarkLayer.renderables.splice(i,1);
+        }
+
+    }
+    // console.log(placemarkLayer.renderables);
 }
 
 function handleClickedItem(item){
-//          console.log('Images so far!',placemarkLayer.renderables);
     var extraAspisData = item.userObject.extraAspisData;
-    if(extraAspisData.type === 'flame'){
-        document.getElementById('label').innerHTML = renderFlameMenu();
+    //if(extraAspisData.type === 'flame'){
+    //    document.getElementById('label').innerHTML = renderFlameMenu();
+    //}
+
+    if(deletingActive){
+        removeImageFromMap(extraAspisData.ID);
     }
 }
 
 function toggleAdd(){
     addingActive = !addingActive;
 
-    if(addingActive){ document.getElementById("flame_img").src = '/assets/flame.png';}
+    if(addingActive){
+        deletingActive = false;
+        document.getElementById("flame_img").src = '/assets/flame.png';
+    }
     else{document.getElementById("flame_img").src = '/assets/dead_flame.png';}
 }
 
 function toggleRemove(){
-    addingActive = !addingActive;
+    deletingActive = !deletingActive;
 
-    if(addingActive){ document.getElementById("flame_img").src = '/assets/flame.png';}
+    if(deletingActive){
+        addingActive = false;
+        document.getElementById("flame_img").src = '/assets/flame.png';
+    }
     else{document.getElementById("flame_img").src = '/assets/dead_flame.png';}
 }
 
