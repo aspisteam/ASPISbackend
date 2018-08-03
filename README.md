@@ -41,3 +41,24 @@
 // "elevation":{"type":"elevation:m","value":"3","unit":"m"}}
 // fuel: 03
 //05) WE HAVE FIRE BEHAVIOR DESCRIPTION
+
+
+
+
+
+
+
+
+
+
+
+
+1) στρογγυλοποιηση
+2) directions
+
+
+
+
+
+
+

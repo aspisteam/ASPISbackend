@@ -108,9 +108,10 @@ function toggleAdd(){
 
     if(addingActive){
         deletingActive = false;
-        document.getElementById("flame_img").src = '/assets/flame.png';
+        document.getElementById("dlt_img").src = '/assets/delete_disabled.png';
+        document.getElementById("add_img").src = '/assets/add_enabled.png';
     }
-    else{document.getElementById("flame_img").src = '/assets/dead_flame.png';}
+    else{document.getElementById("add_img").src = '/assets/add_disabled.png';}
 }
 
 function toggleRemove(){
@@ -118,9 +119,10 @@ function toggleRemove(){
 
     if(deletingActive){
         addingActive = false;
-        document.getElementById("flame_img").src = '/assets/flame.png';
+        document.getElementById("add_img").src = '/assets/add_disabled.png';
+        document.getElementById("dlt_img").src = '/assets/delete_enabled.png';
     }
-    else{document.getElementById("flame_img").src = '/assets/dead_flame.png';}
+    else document.getElementById("dlt_img").src = '/assets/delete_disabled.png';
 }
 
 

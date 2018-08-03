@@ -25,9 +25,13 @@
                 <div style="background-color: #454545; padding:8px;">
                     <img src="/assets/logo.png" width="70px" height="70px">
                 </br>
-                    <img id="flame_img" src="/assets/dead_flame.png" width="30px" height="30px"/>
-                    <button onclick="toggleAdd()">Add</button>
-                    <button onclick="toggleRemove()">Delete</button>
+                    <img id="flame_img" src="/assets/flame.png" width="30px" height="30px"/>
+                    <button onclick="toggleAdd()" style=" background-color: #ffffff00; border-color: #ffffff00">
+                        <img id="add_img" src="/assets/add_disabled.png" width="30px" height="30px"/>
+                    </button>
+                    <button onclick="toggleRemove()" style=" background-color: #ffffff00; border-color: #ffffff00">
+                        <img id="dlt_img" src="/assets/delete_disabled.png" width="30px" height="30px"/>
+                    </button>
                 </div>
                 <div style="align-items: flex-end">World</div>
         </div>
